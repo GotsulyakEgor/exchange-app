@@ -1,0 +1,28 @@
+<div class="container">
+<form class="main" [formGroup]="form">
+  <div class="convert-block">
+    <select formControlName="firstSelect" (change)="onChangeSelect()">
+      <option selected>USD</option>
+      <option>UAH</option>
+      <option>EUR</option>
+    </select>
+    <input class="convert-input" type="number" placeholder="Enter amount..." formControlName="firstInput"
+        >
+  </div>
+  <div class="arrows">&#8693;</div>
+  <div class="convert-block">
+    <select formControlName="secondSelect" (change)="onChangeSelect()">
+      <option>USD</option>
+      <option selected>UAH</option>
+      <option>EUR</option>
+    </select>
+    <input class="convert-input" type="number" placeholder="Enter amount..."  formControlName="secondInput" (change)="onChangeSecondInputAmount()">
+<!--           [(ngModel)]="secondInputValue" (ngModelChange)="onChangeSecondInputAmount()"-->
+
+  </div>
+
+  <!--  <hr>-->
+  <!--  <h3>{{firstInputValue}}{{selectedFirst}} = {{secondInputValue}}{{selectedSecond}}</h3>-->
+</form>
+</div>
+
