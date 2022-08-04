@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {map} from "rxjs";
-import {debounceTime, distinctUntilChanged, Observable} from "rxjs";
+import {Observable} from "rxjs";
 import {IRate} from "../interfaces/rate.interface";
 import {IConvert} from "../interfaces/convert.interface";
 @Injectable({

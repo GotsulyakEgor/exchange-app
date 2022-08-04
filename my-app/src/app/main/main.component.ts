@@ -30,24 +30,6 @@ export class MainComponent implements OnInit {
   }
 
 
-  // onChangeFirstInputAmount() {
-  //   this.form.controls.firstInput.valueChanges
-  //     .pipe(
-  //       debounceTime(500),
-  //       distinctUntilChanged(),
-  //       filter(_ => !!_),
-  //       switchMap((_) => {
-  //         return this.exchangeService.getConvertByAmount(this.form.controls.firstSelect.value, this.form.controls.secondSelect.value, _)
-  //       })
-  //     )
-  //     .subscribe(x => {
-  //       this.form.controls.secondInput.setValue(x)
-  //       console.log(x.toFixed(3))
-  //       console.log(this.form)
-  //     })
-  // }
-
-
 
   onChangeSecondInputAmount() {
     if (this.secondInputValue.length > 0) {
@@ -55,7 +37,7 @@ export class MainComponent implements OnInit {
         this.form.controls.firstSelect.value, this.form.controls.secondInput.value)
         .subscribe(data => {
           this.form.controls.firstInput.setValue(data)
-          console.log(data)
+
         })
     }
   }
@@ -78,24 +60,7 @@ export class MainComponent implements OnInit {
       .subscribe(x => {
 
         this.form.controls.secondInput.setValue(x)
-        console.log(x.toFixed(3))
-        console.log(this.form)
       })
-
-    // this.form.controls.secondInput.valueChanges
-    //   .pipe(
-    //     debounceTime(1000),
-    //     distinctUntilChanged(),
-    //     filter(_ => !!_),
-    //     switchMap((_) => {
-    //       return this.exchangeService.getConvertByAmount(this.form.controls.secondSelect.value, this.form.controls.firstSelect.value,  _)
-    //     })
-    //   )
-    //   .subscribe(x => {
-    //     this.form.controls.firstInput.setValue(x)
-    //     console.log(x)
-    //     console.log(this.form)
-    //   })
 
   }
 
